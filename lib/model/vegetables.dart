@@ -14,7 +14,7 @@ class Vegetables {
   });
 }
 
-var fruitsList = [
+var veggiesList = [
   Vegetables(
     name: 'Bawang Putih',
     stock: '33 kg',
