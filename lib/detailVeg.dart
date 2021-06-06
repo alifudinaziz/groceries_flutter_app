@@ -9,7 +9,15 @@ class DetailVeggiesScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        child: Text(veggies.name),
+        child: Column(
+          children: [
+            Image.asset(veggies.img),
+            Text(veggies.name),
+            Text(veggies.price),
+            Text(veggies.stock),
+            Text(veggies.description),
+          ],
+        ),
       ),
     );
   }

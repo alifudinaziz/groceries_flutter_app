@@ -10,9 +10,11 @@ class DetailFruitScreen extends StatelessWidget {
     return Scaffold(
       body: Container(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
+            Image.asset(fruit.img),
             Text(fruit.name),
+            Text(fruit.price),
+            Text(fruit.stock),
             Text(fruit.description),
           ],
         ),
