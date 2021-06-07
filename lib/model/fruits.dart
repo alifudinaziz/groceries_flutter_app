@@ -21,7 +21,7 @@ var fruitsList = [
     description:
         'Anggur merah berkualitas, tersedia dalam keadaan yang masih segar dan baru dipetik dari kebun yang berada di daerah Probolinggo.',
     price: 'Rp. 10.000/kg',
-    img: 'images/anggur.png',
+    img: 'images/anggur.jpg',
   ),
   Fruits(
     name: 'Apel',
@@ -29,7 +29,7 @@ var fruitsList = [
     description:
         'Apel yang berasal dari Malang. Sangat berkualitas dan fresh dan baik untuk kesehatan. Cocok untuk dimakan saat berkumpul dengan keluarga.',
     price: 'Rp. 15.000/kg',
-    img: 'images/apel.png',
+    img: 'images/apel.jpg',
   ),
   Fruits(
     name: 'Buah Naga',
@@ -37,7 +37,7 @@ var fruitsList = [
     description:
         'Buah Naga yang terpilih dan terbaik saat dipanen di daerah Banyuwangi. Sangat cocok untuk dikonsumsi saat bersantai di rumah bersama keluarga.',
     price: 'Rp. 13.500/kg',
-    img: 'images/buah_naga.png',
+    img: 'images/buah_naga.jpg',
   ),
   Fruits(
     name: 'Durian',
@@ -45,7 +45,7 @@ var fruitsList = [
     description:
         'Buah Durian montong yang masih dalam keadaan segar dan matang. Dipetik langsung dari daerah Banjarnegara sehingga terjamin kualitas dan kelezatannya.',
     price: 'Rp. 30.300',
-    img: 'images/durian.png',
+    img: 'images/durian.jpg',
   ),
   Fruits(
     name: 'Jeruk',
@@ -53,7 +53,7 @@ var fruitsList = [
     description:
         'Jeruk segar dan memiliki rasa yang lezat. Cocok untuk oleh-oleh dan sangat baik untuk kesehatan dan menjaga Vitamin C yang dibutuhkan oleh tubuh.',
     price: 'Rp. 9.000/kg',
-    img: 'images/jeruk.png',
+    img: 'images/jeruk.jpg',
   ),
   Fruits(
     name: 'Pisang',
@@ -61,7 +61,7 @@ var fruitsList = [
     description:
         'Pisang memiliki kualitas yang baik. Langsung dipanen di provinsi Jawa Timur yang terkenal sebagai penghasil pisang yang berkualitas dan terbaik.',
     price: 'Rp. 17.000',
-    img: 'images/pisang.png',
+    img: 'images/pisang.jpg',
   ),
   Fruits(
     name: 'Rambutan',
@@ -69,7 +69,7 @@ var fruitsList = [
     description:
         'Rambutan terlezat yang berjenis rambutan binjai. Dipanen langsung dari daerah Blitar yang memiliki perkebunan rambutan yang terbaik dan terjaga kualitasnya.',
     price: 'Rp. 15.000/kg',
-    img: 'images/rambutan.png',
+    img: 'images/rambutan.jpg',
   ),
   Fruits(
     name: 'Strawberry',
@@ -77,6 +77,6 @@ var fruitsList = [
     description:
         'Strawberry yang sangat lezat dan memiliki kandungan gizi yang baik untuk tubuh. Cocok untuk oleh-oleh agar keluarga di rumah dapat merasakan rasa lezatnya.',
     price: 'Rp. 17.800/kg',
-    img: 'images/strawberry.png',
+    img: 'images/strawberry.jpg',
   ),
 ];
