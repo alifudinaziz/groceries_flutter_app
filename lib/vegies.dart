@@ -149,121 +149,131 @@ class VeggiesList extends StatelessWidget {
   }
 }
 
-class VeggiesGrid extends StatelessWidget {
+class VeggiesGrid extends StatefulWidget {
   final int countGrid;
   VeggiesGrid({required this.countGrid});
 
   @override
+  _VeggiesGridState createState() => _VeggiesGridState();
+}
+
+class _VeggiesGridState extends State<VeggiesGrid> {
+  final _scrollController = ScrollController();
+
+  @override
   Widget build(BuildContext context) {
-    return Scrollbar(
-      isAlwaysShown: true,
-      child: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: GridView.count(
-          crossAxisCount: countGrid,
-          crossAxisSpacing: 16,
-          mainAxisSpacing: 16,
-          children: veggiesList.map((veggie) {
-            return InkWell(
-              onTap: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) {
-                  return DetailVeggiesScreen(
-                    veggies: veggie,
-                  );
-                }));
-              },
-              child: Card(
-                elevation: 4,
-                shadowColor: Colors.greenAccent,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10),
-                ),
-                child: SingleChildScrollView(
-                  child: Column(
-                    children: [
-                      Stack(
-                        alignment: Alignment.topRight,
-                        children: <Widget>[
-                          ClipRRect(
-                            borderRadius: BorderRadius.only(
-                              topLeft: Radius.circular(10),
-                              topRight: Radius.circular(10),
-                            ),
-                            child: Image.asset(
-                              veggie.img,
-                              fit: BoxFit.cover,
+    return Padding(
+      padding: const EdgeInsets.all(16.0),
+      child: GridView.count(
+        crossAxisCount: widget.countGrid,
+        crossAxisSpacing: 16,
+        mainAxisSpacing: 16,
+        children: veggiesList.map((veggie) {
+          return InkWell(
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) {
+                return DetailVeggiesScreen(
+                  veggies: veggie,
+                );
+              }));
+            },
+            child: Card(
+              elevation: 4,
+              shadowColor: Colors.greenAccent,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: SingleChildScrollView(
+                child: Column(
+                  children: [
+                    Stack(
+                      alignment: Alignment.topRight,
+                      children: <Widget>[
+                        ClipRRect(
+                          borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(10),
+                            topRight: Radius.circular(10),
+                          ),
+                          child: Image.asset(
+                            veggie.img,
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                        ClipRRect(
+                          borderRadius: BorderRadius.only(
+                            bottomLeft: Radius.circular(10),
+                            topRight: Radius.circular(10),
+                          ),
+                          child: Container(
+                            color: Color(0xFFf5a9a9),
+                            child: LoveIconButton(
+                              veggie: veggie,
                             ),
                           ),
-                          ClipRRect(
-                            borderRadius: BorderRadius.only(
-                              bottomLeft: Radius.circular(10),
-                              topRight: Radius.circular(10),
-                            ),
-                            child: Container(
-                              color: Color(0xFFf5a9a9),
-                              child: LoveIconButton(
-                                veggie: veggie,
+                        ),
+                      ],
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 8.0),
+                      child: Text(
+                        veggie.name,
+                        style: TextStyle(
+                          fontSize: 24.0,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(16.0),
+                      child: Column(
+                        children: <Widget>[
+                          Row(
+                            children: <Widget>[
+                              Text(
+                                'Harga: ',
+                                style: TextStyle(fontSize: 16.0),
                               ),
-                            ),
+                              Text(
+                                veggie.price,
+                                style: TextStyle(
+                                  fontSize: 16.0,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ],
+                          ),
+                          Row(
+                            children: <Widget>[
+                              Text(
+                                'Stok: ',
+                                style: TextStyle(fontSize: 16.0),
+                              ),
+                              Text(
+                                veggie.stock,
+                                style: TextStyle(
+                                  fontSize: 16.0,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ],
                           ),
                         ],
                       ),
-                      Padding(
-                        padding: const EdgeInsets.only(top: 8.0),
-                        child: Text(
-                          veggie.name,
-                          style: TextStyle(
-                            fontSize: 24.0,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.all(16.0),
-                        child: Column(
-                          children: <Widget>[
-                            Row(
-                              children: <Widget>[
-                                Text(
-                                  'Harga: ',
-                                  style: TextStyle(fontSize: 16.0),
-                                ),
-                                Text(
-                                  veggie.price,
-                                  style: TextStyle(
-                                    fontSize: 16.0,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                ),
-                              ],
-                            ),
-                            Row(
-                              children: <Widget>[
-                                Text(
-                                  'Stok: ',
-                                  style: TextStyle(fontSize: 16.0),
-                                ),
-                                Text(
-                                  veggie.stock,
-                                  style: TextStyle(
-                                    fontSize: 16.0,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
               ),
-            );
-          }).toList(),
-        ),
+            ),
+          );
+        }).toList(),
       ),
     );
+  }
+
+  @override
+  void dispose() {
+    _scrollController.dispose();
+    super.dispose();
   }
 }
 
