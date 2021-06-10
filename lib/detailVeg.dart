@@ -117,31 +117,34 @@ class DetailVeggiesScreen extends StatelessWidget {
                 ),
               ),
               Container(
-                child: Card(
-                  elevation: 4,
-                  shadowColor: Colors.greenAccent,
-                  margin: EdgeInsets.only(
-                    left: 16.0,
-                    right: 16.0,
-                  ),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Text(
-                          'Mau beli berapa?',
-                          style: TextStyle(
-                            fontSize: 20.0,
-                            fontWeight: FontWeight.bold,
+                child: Padding(
+                  padding: const EdgeInsets.only(bottom: 16.0),
+                  child: Card(
+                    elevation: 4,
+                    shadowColor: Colors.greenAccent,
+                    margin: EdgeInsets.only(
+                      left: 16.0,
+                      right: 16.0,
+                    ),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Text(
+                            'Mau beli berapa?',
+                            style: TextStyle(
+                              fontSize: 20.0,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
                         ),
-                      ),
-                      CountBuy(),
-                    ],
+                        CountBuy(),
+                      ],
+                    ),
                   ),
                 ),
               )
